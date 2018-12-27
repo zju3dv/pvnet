@@ -1,1 +1,259 @@
-<h1>Hello world</h1>
+<!doctype html>
+<html>
+
+<head>
+  <title>PVNet: Pixel-wise Voting Network for 6DoF Pose Estimation</title>
+
+  <style type="text/css">
+    body {
+      margin: 0px;
+      background-color: #F3F3F3;
+      font-family: 'PT Sans', 'Arial';
+    }
+    h1 {
+      text-align: center;
+      color: #444444;
+      font-size: 36px;
+      margin-top:50px;
+      margin-bottom: 0px;
+    }
+    h2 {
+      margin-top: 120px;
+      margin-bottom: 10px;
+      color: #FFCF43;
+      font-size: 30px;
+    }
+    #headerdiv {
+      width: 1150px;
+      margin: auto;
+    }
+    #maincontent {
+      width: 1000px;
+      margin: auto;
+      height: 340px;
+    }
+    #suppcontent {
+      padding-top: 0px;
+      background-color: black;
+      color: #BBBBBB;
+      font-size: 16px;
+    }
+    
+    #content {
+      width: 1000px;
+      margin: auto;
+    }
+    td {
+      vertical-align: top;
+      text-align: center;
+    }
+    .desc {
+      color: #888888;
+    }
+    .center {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+    .nips {
+      text-align: center;
+      margin-top: 0px;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .nips a {
+      color: #777777;
+    }
+    .google {
+      text-align: center;
+      margin-top: 2px;
+      font-size: 15px;
+    }
+    .google a {
+      color: #204c87;
+    }
+    .center {
+      text-align: center;
+    }
+    .authors {
+      text-align: center;
+    }
+    .author {
+      margin-right: 45px;
+      font-size: 21px;
+    }
+    .author a {
+      color: #3376cb;
+    }
+    #abstract {
+      line-height: 1.3;
+      width: 1000px;
+      font-size: 16px;
+    }
+    h2 {
+      color: #666666;
+      margin-top: 70px;
+    }
+    h1.supp {
+      padding-top: 40px;
+      margin-top: 0;
+      color:#aaaaaa;
+      font-size:40px;
+      margin-bottom: 20px;
+    }
+    h2.abstract {
+      color: #555555;
+      margin-top: 0px;
+    }
+    #files {
+      color: #555555;
+      margin-top: 20px;
+      font-size: 25px;
+    }
+    #files a {
+      text-decoration: None;
+      color: #3376cb;
+    }
+    a {
+      text-decoration: none;
+    }
+  </style>
+
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  <link href="css/frame.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/controls.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/custom.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <style>
+    .menu-index {
+      color: rgb(255, 255, 255) !important;
+      opacity: 1 !important;
+      font-weight: 700 !important;
+    }
+  </style>
+</head>
+
+<body>
+        <!--Start Intro-->
+<div id="headerdiv">
+  <h1>
+  PVNet: Pixel-wise Voting Network for 6DoF Pose Estimation
+  </h1>
+  <!-- <div class="nips"><a href="https://nips.cc/">NIPS 2018 (oral)</a></div> -->
+</div>
+  <div id="maincontent">
+  <div class="authors" style="margin-top: 10px">
+  <span class="author">Sida Peng<sup>*,1</sup></a></span>
+  <span class="author">Yuan Liu<sup>*,1</sup></a></span>
+  <span class="author">Qixing Huang<sup>2</sup></a></span>
+  <span class="author">Hujun Bao<sup>1</sup></a></span>
+  <span class="author">Xiaowei Zhou<sup>1</sup></a></span>
+  </div>
+<div class="google" style="margin-top: 10px">1. State Key Lab of CAD & CG, ZheJiang University &nbsp;&nbsp;&nbsp;&nbsp; 2. Graphics & AI Lab, University of Texas at Austin</div>
+<div class="google" style="margin-top: 5px">* The first two authors contribute equally to this paper</div>
+  
+<div class="flex-item flex-column">
+
+
+<div class="content">
+<div class="content-table">
+<div class="flex-row">
+<div id="abstract">
+    <h2 class="abstract"> Abstract </h2>
+This paper addresses the challenge of 6DoF pose estimation from a single RGB image under severe occlusion or truncation. Many recent works have shown that a two-stage approach, which first detects keypoints and then solves a Perspective-n-Point (PnP) problem for pose estimation, achieves remarkable performance. However, most of these methods only localize a set of sparse keypoints by regressing their image coordinates or heatmaps, which are sensitive to occlusion and truncation. Instead, we introduce a Pixel-wise Voting Network (PVNet) to regress pixel-wise unit vectors pointing to the keypoints and use these vectors to vote for keypoint locations using RANSAC. This creates a flexible representation for localizing occluded or truncated keypoints. Another important feature of this representation is that it provides uncertainties of keypoint locations that can be further leveraged by the PnP solver. Experiments show that the proposed approach outperforms the state of the art on the LINEMOD, Occlusion LINEMOD and YCB-Video datasets by a large margin, while being efficient for real-time pose estimation. We further create a Truncation LINEMOD dataset to validate the robustness of our approach against truncation. 
+</div>
+    <div id="files" class="center" style="margin-top: 10px">
+      [<a href="./index.html">Paper</a>]&nbsp;&nbsp;&nbsp;&nbsp;
+      [<a href="./index.html">Code</a>]&nbsp;&nbsp;&nbsp;&nbsp;
+      [<a href="./index.html">Pretrained Model</a>]
+    </div>
+  </div>
+  </div>
+  </div>
+</div>
+
+
+
+  <div class="content-container">
+    <div class="content">
+
+      <div class="content-table flex-column">
+        <!--End Intro-->
+        <h2 class="add-top-margin">A Video for introduction</h2>
+        <div class="flex-item flex-item-stretch flex-column">
+          <video preload controls muted playsinline class="image">
+            <source src="./pvnet.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <!--Start Text with Images and Image buttons-->
+        <h2 class="add-top-margin">Deal with occlusion</h2>
+        <p class="text">
+        Visualizations of results on the Occlusion LINEMOD dataset. Green 3D bounding boxes represent the ground truth poses while blue 3D bounding boxes represent our predictions.
+        </p>
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+          </div>
+        </div>
+        <div class="gallery">
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="occlusion/ape1.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="occlusion/ape2.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="occlusion/can1.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="occlusion/can2.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="occlusion/cat1.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="occlusion/cat2.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="occlusion/driller1.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="occlusion/driller2.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="occlusion/duck1.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="occlusion/duck2.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="occlusion/glue1.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="occlusion/glue2.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="occlusion/hole1.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="occlusion/hole2.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="occlusion/cat3.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="occlusion/cat4.png"></a>
+        </div>
+        <h2 class="add-top-margin">Deal with truncation</h2>
+        <p class="text">
+        Visualizations of results on the Occlusion LINEMOD dataset. Green 3D bounding boxes represent the ground truth poses while blue 3D bounding boxes represent our predictions.
+        </p>
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+          </div>
+        </div>
+        <div class="gallery">
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="truncation/ape1.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="truncation/ape2.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="truncation/can1.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="truncation/can2.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="truncation/cat1.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="truncation/cat2.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="truncation/driller1.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="truncation/driller2.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="truncation/duck1.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="truncation/duck2.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="truncation/glue1.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="truncation/glue2.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="truncation/hole1.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="truncation/hole2.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="truncation/bench1.png"></a>
+          <a href="javascript:void(0)" class="flex-column" width=256 height=256><img src="truncation/bench2.png"></a>
+        </div>
+
+        <!--Start Text with Images and Videos-->
+        <h2 class="add-top-margin">Real-time demo</h2>
+        <div class="flex-item flex-item-stretch flex-column">
+          <video preload controls muted playsinline class="image">
+            <source src="./demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

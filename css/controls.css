@@ -1,0 +1,204 @@
+/*************************************************************************
+ * GitHub: https://github.com/yenchiah/project-website-template
+ * Version: v3.1
+ * This CSS file has control elements that do not require JavaScript
+ * If you want to keep this template updated, avoid modifying this file
+ * Instead, add your own CSS in the index.css
+ *************************************************************************/
+
+.custom-image-button {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  box-sizing: border-box;
+  text-decoration: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.custom-button {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 15px;
+  outline: none;
+  border-radius: 2px;
+  cursor: pointer;
+  box-shadow: none;
+  transition: background-color 0.1s, box-shadow 0.1s, border 0.1s;
+  text-decoration: none;
+  display: block;
+  box-sizing: border-box;
+  color: white;
+  border: 1px solid #7d7d7d;
+  background-color: #7d7d7d;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.custom-button:not(:disabled):hover {
+  background-color: #4d4d4d;
+  border-color: #4d4d4d;
+}
+
+.custom-button:not(:disabled):active {
+  background-color: #4d4d4d;
+  border-color: #4d4d4d;
+}
+
+.custom-button:disabled {
+  opacity: 0.4;
+  cursor: default;
+  border-color: #7d7d7d;
+  background-color: #7d7d7d;
+}
+
+.custom-button-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.custom-button-primary:not(:disabled):hover {
+  background-color: #005cbf;
+  border-color: #005cbf;
+}
+
+.custom-button-primary:not(:disabled):active {
+  background-color: #005cbf;
+  border-color: #005cbf;
+}
+
+.custom-button-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.custom-button-danger:not(:disabled):hover {
+  background-color: #a71120;
+  border-color: #a71120;
+}
+
+.custom-button-danger:not(:disabled):active {
+  background-color: #a71120;
+  border-color: #a71120;
+}
+
+.custom-button-info {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.custom-button-info:not(:disabled):hover {
+  background-color: #007082;
+  border-color: #007082;
+}
+
+.custom-button-info:not(:disabled):active {
+  background-color: #007082;
+  border-color: #007082;
+}
+
+.custom-button-flat {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  text-align: center;
+  font-size: 16px;
+  line-height: 16px;
+  outline: none;
+  border-radius: 48px;
+  cursor: pointer;
+  box-shadow: none;
+  transition: background-color 0.1s, box-shadow 0.1s, border 0.1s;
+  text-decoration: none;
+  color: black;
+  border: 1px solid #777777;
+  background-color: white;
+  padding: 13px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.custom-button-flat:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.custom-button-flat img {
+  width: 20px;
+  height: 20px;
+}
+
+.custom-button-flat span {
+  margin-left: 6px;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: stretch;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.control-group .custom-image-button {
+  margin: 10px 0 10px 0;
+}
+
+.control-group .custom-image-button:not(:last-child) {
+  margin-right: 15px;
+}
+
+.control-group .custom-button {
+  margin: 10px 0 10px 0;
+}
+
+.control-group .custom-button:not(:last-child) {
+  margin-right: 15px;
+}
+
+.control-group .custom-button-flat {
+  margin: 10px 0 10px 0;
+}
+
+.control-group .custom-button-flat:not(:last-child) {
+  margin-right: 15px;
+}
+
+@media screen and (max-width: 500px) {
+  .stretch-on-mobile {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    flex: 1 0 100%;
+    max-width: 100%;
+  }
+}
