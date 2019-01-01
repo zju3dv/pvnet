@@ -166,7 +166,7 @@
 This paper addresses the challenge of 6DoF pose estimation from a single RGB image under severe occlusion or truncation. Many recent works have shown that a two-stage approach, which first detects keypoints and then solves a Perspective-n-Point (PnP) problem for pose estimation, achieves remarkable performance. However, most of these methods only localize a set of sparse keypoints by regressing their image coordinates or heatmaps, which are sensitive to occlusion and truncation. Instead, we introduce a Pixel-wise Voting Network (PVNet) to regress pixel-wise unit vectors pointing to the keypoints and use these vectors to vote for keypoint locations using RANSAC. This creates a flexible representation for localizing occluded or truncated keypoints. Another important feature of this representation is that it provides uncertainties of keypoint locations that can be further leveraged by the PnP solver. Experiments show that the proposed approach outperforms the state of the art on the LINEMOD, Occlusion LINEMOD and YCB-Video datasets by a large margin, while being efficient for real-time pose estimation. We further create a Truncation LINEMOD dataset to validate the robustness of our approach against truncation. 
 </div>
     <div id="files" class="center" style="margin-top: 10px">
-      [<a href="./index.html">Paper</a>]&nbsp;&nbsp;&nbsp;&nbsp;
+      [<a href="https://arxiv.org/pdf/1812.11788.pdf">Paper</a>]&nbsp;&nbsp;&nbsp;&nbsp;
       [<a href="./code.html">Code</a>]&nbsp;&nbsp;&nbsp;&nbsp;
       [<a href="./model.html">Pretrained Model</a>]&nbsp;&nbsp;&nbsp;&nbsp;
       [<a href="https://1drv.ms/u/s!AtZjYZ01QjphfFufqSuahBOxVas">Truncation Dataset</a>]
