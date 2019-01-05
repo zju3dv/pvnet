@@ -5,7 +5,7 @@
 * Objects: 13
 * Object models: Mesh models with surface color and normals.
 * Training images: None. **This dataset is only for testing.**
-* Testing images: We took all images in the LINEMOD dataset [1], and cropped them to [256, 256] images where the target object remains only 40% to 60% visible area.
+* Testing images: We took all images in the LINEMOD dataset [1], and cropped them to [256, 256] images where the target object remains only 40% to 60% visible area. These cropped images are taken for testing.
 
 ## Dataset format
 
