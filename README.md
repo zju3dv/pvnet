@@ -1,8 +1,13 @@
 # PVNet: Pixel-wise Voting Network for 6DoF Pose Estimation
 
-Project Page: https://zju-3dv.github.io/pvnet
+![introduction](./assets/introduction.png)
 
-The code will be available soon.
+> [PVNet: Pixel-wise Voting Network for 6DoF Pose Estimation](https://arxiv.org/pdf/1812.11788.pdf)  
+> Sida Peng, Yuan Liu, Qixing Huang, Hujun Bao, Xiaowei Zhou  
+> CVPR 2019 oral  
+> [Project Page](https://zju-3dv.github.io/pvnet)
+
+Any questions or discussions are welcomed!
 
 ## Truncation LINEMOD Dataset
 
