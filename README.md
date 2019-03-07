@@ -55,11 +55,14 @@ wget -O LINEMOD.tar --no-check-certificate "https://onedrive.live.com/download?c
 
 Download the LINEMOD_ORIG, which can be found at [here](http://campar.in.tum.de/Main/StefanHinterstoisser).
 
+Download the OCCLUSION_LINEMOD, which can be found at [here](https://cloudstore.zih.tu-dresden.de/index.php/s/a65ec05fedd4890ae8ced82dfcf92ad8/download)
+
 ### Create the soft link
 
 ```
 ln -s path/to/LINEMOD $ROOT/data/LINEMOD
 ln -s path/to/LINEMOD_ORIG $ROOT/data/LINEMOD_ORIG
+ln -s path/to/OCCLUSION_LINEMOD $ROOT/data/OCCLUSION_LINEMOD
 ```
 
 ### Compute FPS keypoints
@@ -71,4 +74,30 @@ python lib/utils/data_utils.py
 ### Synthesize images for each object
 
 See [pvnet-rendering](https://github.com/zju-3dv/pvnet-rendering) for information about the image synthesis.
+
+## Training and testing
+
+### Training on the LINEMOD
+
+Before training, remember to add the `lib` under `extend_utils` to the LD_LIDBRARY_PATH
+
+```
+export LD_LIDBRARY_PATH=$LD_LIDBRARY_PATH:/path/to/bb8-voter/lib/utils/extend_utils/lib
+```
+
+Training
+
+```
+python tools/train_linemod.py --cfg_file ./configs/linemod_train.json --linemod_cls cat
+```
+
+### Testing
+
+We provide the pretrained models of each object, which can be found at [here]().
+
+Testing
+
+```
+python tools/train_linemod.py --cfg_file ./configs/linemod_train.json --linemod_cls cat --test_model
+```
 
