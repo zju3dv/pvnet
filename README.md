@@ -3,7 +3,7 @@
 ![introduction](./assets/introduction.png)
 
 > [PVNet: Pixel-wise Voting Network for 6DoF Pose Estimation](https://arxiv.org/pdf/1812.11788.pdf)  
-> Sida Peng, Yuan Liu, Qixing Huang, Hujun Bao, Xiaowei Zhou  
+> Sida Peng, Yuan Liu, Qixing Huang, Xiaowei Zhou, Hujun Bao   
 > CVPR 2019 oral  
 > [Project Page](https://zju-3dv.github.io/pvnet)
 
@@ -60,6 +60,7 @@ Download the OCCLUSION_LINEMOD, which can be found at [here](https://cloudstore.
 ### Create the soft link
 
 ```
+mkdir $ROOT/data
 ln -s path/to/LINEMOD $ROOT/data/LINEMOD
 ln -s path/to/LINEMOD_ORIG $ROOT/data/LINEMOD_ORIG
 ln -s path/to/OCCLUSION_LINEMOD $ROOT/data/OCCLUSION_LINEMOD
@@ -88,7 +89,7 @@ export LD_LIDBRARY_PATH=$LD_LIDBRARY_PATH:/path/to/bb8-voter/lib/utils/extend_ut
 Training
 
 ```
-python tools/train_linemod.py --cfg_file ./configs/linemod_train.json --linemod_cls cat
+python tools/train_linemod.py --cfg_file configs/linemod_train.json --linemod_cls cat
 ```
 
 ### Testing
@@ -98,6 +99,6 @@ We provide the pretrained models of each object, which can be found at [here]().
 Testing
 
 ```
-python tools/train_linemod.py --cfg_file ./configs/linemod_train.json --linemod_cls cat --test_model
+python tools/train_linemod.py --cfg_file configs/linemod_train.json --linemod_cls cat --test_model
 ```
 

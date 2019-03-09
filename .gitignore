@@ -1,0 +1,28 @@
+# data
+/data
+/runs
+*.pth
+assets/*
+assets
+
+# compile
+cmake-build-debug/
+.idea/
+__pycache__/
+*.egg-info/
+build/
+dist/
+.ipynb_checkpoints/
+*.py[cod]
+*.so
+*.orig
+figure/result
+figure/pose_cnn_cached
+figure/cached
+figure/video_new
+lib/mesh_renderer/.*
+lib/mesh_renderer/cmake-*
+lib/mesh_renderer/build
+!lib/mesh_renderer/build/*.so
+lib/utils/extend_utils/src/CMakeFiles
+lib/utils/extend_utils/src/CMakeCache.txt

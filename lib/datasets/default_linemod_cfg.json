@@ -1,0 +1,40 @@
+{
+  "mask":true,
+  "min_mask":0.1,
+  "max_mask":0.4,
+
+  "rotation":true,
+  "rot_ang_min":-30,
+  "rot_ang_max":30,
+
+  "crop":true,
+  "use_old":false,
+  "resize_ratio_min":0.8,
+  "resize_ratio_max":1.2,
+
+  "overlap_ratio":0.5,
+  "resize_hmin":20,
+  "resize_hmax":130,
+  "resize_wmin":20,
+  "resize_wmax":130,
+
+  "flip":true,
+
+  "blur":true,
+
+  "jitter":true,
+  "brightness":0.1,
+  "contrast":0.1,
+  "saturation":0.1,
+  "hue":0.1,
+
+  "wmax":640,
+  "wmin":256,
+  "hmax":480,
+  "hmin":256,
+  "size_int":8,
+
+  "use_mask_out":false,
+
+  "ignore_fuse_ms_vertex":false
+}
