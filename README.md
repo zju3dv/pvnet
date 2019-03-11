@@ -76,6 +76,20 @@ python lib/utils/data_utils.py
 
 See [pvnet-rendering](https://github.com/zju-3dv/pvnet-rendering) for information about the image synthesis.
 
+## Demo
+
+Download the pretrained model of cat from [here](https://1drv.ms/u/s!AtZjYZ01QjphgQkDZa7fyvvaD7P6) and put it to `$ROOT/data/model/cat_demo/199.pth`. 
+
+Run the demo
+
+```
+python tools/demo.py
+```
+
+If setup correctly, the output will look like
+
+![cat](./assets/cat.png)
+
 ## Training and testing
 
 ### Training on the LINEMOD
@@ -94,7 +108,14 @@ python tools/train_linemod.py --cfg_file configs/linemod_train.json --linemod_cl
 
 ### Testing
 
-We provide the pretrained models of each object, which can be found at [here]().
+We provide the pretrained models of each object, which can be found at [here](https://1drv.ms/f/s!AtZjYZ01QjphgQBQDQghxjbkik5f).
+
+Download the pretrained model and move it to `$ROOT/data/model/{cls}_linemod_train/199.pth`. For instance
+
+```
+mkdir $ROOT/data/model
+mv ape_199.pth $ROOT/data/model/ape_linemod_train/199.pth
+```
 
 Testing
 

@@ -16,6 +16,7 @@ dist/
 *.py[cod]
 *.so
 *.orig
+*.o
 figure/result
 figure/pose_cnn_cached
 figure/cached

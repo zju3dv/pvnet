@@ -1,5 +1,5 @@
 {
-  "model_name":"linemod_train_v20",
+  "model_name":"linemod_train",
 
   "network":"resnet18_8s",
 
