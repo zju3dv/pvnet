@@ -119,3 +119,16 @@ Testing
 python tools/train_linemod.py --cfg_file configs/linemod_train.json --linemod_cls cat --test_model
 ```
 
+## Citation
+
+If you find this code useful for your research, please use the following BibTeX entry.
+
+```
+@inproceedings{peng2019pvnet,
+  title={PVNet: Pixel-wise Voting Network for 6DoF Pose Estimation},
+  author={Peng, Sida and Liu, Yuan and Huang, Qixing and Zhou, Xiaowei and Bao, Hujun},
+  booktitle={CVPR},
+  year={2019}
+}
+```
+
