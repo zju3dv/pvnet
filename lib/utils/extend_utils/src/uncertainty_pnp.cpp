@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ceres/rotation.h>
 #include <ceres/ceres.h>
+#include <random>
 
 using namespace std;
 struct ReprojectionErrorArray {
