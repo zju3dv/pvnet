@@ -38,10 +38,10 @@ sudo apt-get install libgoogle-glog-dev
 python build_extend_utils_cffi.py
 ```
 
-Add the `lib` under `extend_utils` to the LD_LIDBRARY_PATH
+Add the `lib` under `extend_utils` to the LD_LIBRARY_PATH
 
 ```
-export LD_LIBRARY_PATH=$LD_LIDBRARY_PATH:/path/to/pvnet/lib/utils/extend_utils/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to/pvnet/lib/utils/extend_utils/lib
 ```
 
 ## Dataset Configuration
