@@ -15,7 +15,7 @@ Check [TRUNCATION_LINEMOD.md](TRUNCATION_LINEMOD.md) for information about the T
 
 ## Installation
 
-The code uses PyTorch v0.4.0. After installing PyTorch, we need compile several files, which works fine with gcc 5.4.0.
+The code uses PyTorch v0.4.1. After installing PyTorch, we need compile several files, which works fine with gcc 5.4.0.
 
 1. Compile the Ransac Voting Layer
 
@@ -35,6 +35,8 @@ Revise the `cuda_include` and `dart` in `build_extend_utils_cffi.py` to be compa
 
 ```
 sudo apt-get install libgoogle-glog-dev
+sudo apt-get install libsuitesparse-dev
+sudo apt-get install libatlas-base-dev
 python build_extend_utils_cffi.py
 ```
 
