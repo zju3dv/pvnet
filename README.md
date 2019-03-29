@@ -5,7 +5,7 @@
 > [PVNet: Pixel-wise Voting Network for 6DoF Pose Estimation](https://arxiv.org/pdf/1812.11788.pdf)  
 > Sida Peng, Yuan Liu, Qixing Huang, Xiaowei Zhou, Hujun Bao   
 > CVPR 2019 oral  
-> [Project Page](https://zju-3dv.github.io/pvnet)
+> [Project Page](https://zju3dv.github.io/pvnet)
 
 Any questions or discussions are welcomed!
 
