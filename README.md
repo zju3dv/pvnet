@@ -71,6 +71,14 @@ ln -s path/to/OCCLUSION_LINEMOD $ROOT/data/OCCLUSION_LINEMOD
 python lib/utils/data_utils.py
 ```
 
+### Generate masks
+
+We need object masks in OCCLUSION_LINEMOD for evaluation
+
+```
+python run.py --type gen_mask
+```
+
 ### Synthesize images for each object
 
 See [pvnet-rendering](https://github.com/zju-3dv/pvnet-rendering) for information about the image synthesis.
