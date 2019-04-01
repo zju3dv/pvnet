@@ -60,7 +60,7 @@ Download the LINEMOD, which can be found at [here](https://1drv.ms/u/s!AtZjYZ01Q
 
 Download the LINEMOD_ORIG, which can be found at [here](http://campar.in.tum.de/Main/StefanHinterstoisser).
 
-Download the OCCLUSION_LINEMOD, which can be found at [here](https://cloudstore.zih.tu-dresden.de/index.php/s/a65ec05fedd4890ae8ced82dfcf92ad8/download)
+Download the OCCLUSION_LINEMOD, which can be found at [here](https://1drv.ms/u/s!AtZjYZ01QjphgRCzvy05fjKqR__e)
 
 ### Create the soft link
 
@@ -75,14 +75,6 @@ ln -s path/to/OCCLUSION_LINEMOD $ROOT/data/OCCLUSION_LINEMOD
 
 ```
 python lib/utils/data_utils.py
-```
-
-### Generate masks
-
-We need object masks in OCCLUSION_LINEMOD for evaluation
-
-```
-python run.py --type gen_mask
 ```
 
 ### Synthesize images for each object
