@@ -21,7 +21,7 @@ Check [TRUNCATION_LINEMOD.md](TRUNCATION_LINEMOD.md) for information about the T
 pip install -r requirements.txt
 ```
 
-We need compile several files, which works fine with gcc 5.4.0.
+We need compile several files, which works fine with pytorch v0.4.1 and gcc 5.4.0.
 
 2. Compile the Ransac Voting Layer
 
