@@ -5,6 +5,7 @@ sys.path.append('..')
 from lib.networks.model_repository import *
 from lib.utils.arg_utils import args
 from lib.utils.net_utils import smooth_l1_loss, load_model, compute_precision_recall
+import torch
 from lib.ransac_voting_gpu_layer.ransac_voting_gpu import ransac_voting_layer_v3
 from lib.utils.evaluation_utils import pnp
 from lib.utils.draw_utils import imagenet_to_uint8, visualize_bounding_box
