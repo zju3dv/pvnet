@@ -38,4 +38,4 @@ ffibuilder.set_source("_extend_utils",
 if __name__ == "__main__":
     ffibuilder.compile(verbose=True)
     os.system("rm src/*.o")
-    # os.system("rm *.o")
+    os.system("rm *.o")

@@ -41,7 +41,7 @@ Revise the `cuda_include` and `dart` in `build_extend_utils_cffi.py` to be compa
 
 ```
 sudo apt-get install libgoogle-glog-dev
-sudo apt-get install libsuitesparse-dev
+sudo apt-get install libsuitesparse-dev=1:4.4.6-1
 sudo apt-get install libatlas-base-dev
 python build_extend_utils_cffi.py
 ```
