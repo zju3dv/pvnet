@@ -40,9 +40,9 @@ cd $ROOT/lib/utils/extend_utils
 Revise the `cuda_include` and `dart` in `build_extend_utils_cffi.py` to be compatible with the CUDA in your computer.
 
 ```
-sudo apt-get install libgoogle-glog-dev
+sudo apt-get install libgoogle-glog-dev=0.3.4-0.1
 sudo apt-get install libsuitesparse-dev=1:4.4.6-1
-sudo apt-get install libatlas-base-dev
+sudo apt-get install libatlas-base-dev=3.10.2-9
 python build_extend_utils_cffi.py
 ```
 
