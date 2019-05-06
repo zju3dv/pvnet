@@ -95,6 +95,10 @@ If setup correctly, the output will look like
 
 ![cat](./assets/cat.png)
 
+### Visualization of the voting procedure
+
+We add a jupyter notebook [visualization.ipynb](./visualization.ipynb) for the keypoint detection pipeline of PVNet, aiming to make it easier for readers to understand our paper. Thanks for Kudlur, M 's suggestion. 
+
 ## Training and testing
 
 ### Training on the LINEMOD

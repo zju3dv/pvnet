@@ -3,7 +3,6 @@ import sys
 sys.path.append('.')
 sys.path.append('..')
 from lib.networks.model_repository import *
-from lib.utils.arg_utils import args
 from lib.utils.net_utils import smooth_l1_loss, load_model, compute_precision_recall
 import torch
 from lib.ransac_voting_gpu_layer.ransac_voting_gpu import ransac_voting_layer_v3
@@ -22,9 +21,9 @@ from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
 
-with open(args.cfg_file, 'r') as f:
+with open('configs/linemod_train.json', 'r') as f:
     train_cfg = json.load(f)
-train_cfg['model_name'] = '{}_{}'.format(args.linemod_cls, train_cfg['model_name'])
+train_cfg['model_name'] = '{}_{}'.format('cat', train_cfg['model_name'])
 
 vote_num = 9
 
@@ -104,6 +103,57 @@ def read_data():
     return data, points_3d, bb8_3d
 
 
+def visualize_mask(mask):
+    plt.imshow(mask[0])
+    plt.show()
+
+
+def visualize_vertex(vertex, vertex_weights):
+    vertex = vertex * vertex_weights
+    for i in range(9):
+        _, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 8))
+        ax1.imshow(vertex[0, 2*i])
+        ax2.imshow(vertex[0, 2*i+1])
+        plt.show()
+
+
+def visualize_hypothesis(image, seg_pred, vertex_pred, corner_target):
+    from lib.ransac_voting_gpu_layer.ransac_voting_gpu import generate_hypothesis
+
+    vertex_pred = vertex_pred.permute(0, 2, 3, 1)
+    b, h, w, vn_2 = vertex_pred.shape
+    vertex_pred = vertex_pred.view(b, h, w, vn_2 // 2, 2)
+    mask = torch.argmax(seg_pred, 1)
+    hyp, hyp_counts = generate_hypothesis(mask, vertex_pred, 1024, inlier_thresh=0.99)
+
+    image = imagenet_to_uint8(image.detach().cpu().numpy())
+    hyp = hyp.detach().cpu().numpy()
+    hyp_counts = hyp_counts.detach().cpu().numpy()
+
+    from lib.utils.draw_utils import visualize_hypothesis
+    visualize_hypothesis(image, hyp, hyp_counts, corner_target)
+
+
+def visualize_voting_ellipse(image, seg_pred, vertex_pred, corner_target):
+    from lib.ransac_voting_gpu_layer.ransac_voting_gpu import estimate_voting_distribution_with_mean
+
+    vertex_pred = vertex_pred.permute(0, 2, 3, 1)
+    b, h, w, vn_2 = vertex_pred.shape
+    vertex_pred = vertex_pred.view(b, h, w, vn_2//2, 2)
+    mask = torch.argmax(seg_pred, 1)
+    mean = ransac_voting_layer_v3(mask, vertex_pred, 512, inlier_thresh=0.99)
+    mean, var = estimate_voting_distribution_with_mean(mask, vertex_pred, mean)
+
+    image = imagenet_to_uint8(image.detach().cpu().numpy())
+    mean = mean.detach().cpu().numpy()
+    var = var.detach().cpu().numpy()
+    corner_target = corner_target.detach().cpu().numpy()
+
+    from lib.utils.draw_utils import visualize_voting_ellipse
+    visualize_voting_ellipse(image, mean, var, corner_target)
+
+
+
 def demo():
     net = Resnet18_8s(ver_dim=vote_num * 2, seg_dim=2)
     net = NetWrapper(net).cuda()
@@ -111,10 +161,15 @@ def demo():
 
     optimizer = optim.Adam(net.parameters(), lr=train_cfg['lr'])
     model_dir = os.path.join(cfg.MODEL_DIR, "cat_demo")
-    load_model(net.module.net, optimizer, model_dir, args.load_epoch)
+    load_model(net.module.net, optimizer, model_dir, -1)
     data, points_3d, bb8_3d = read_data()
     image, mask, vertex, vertex_weights, pose, corner_target = [d.unsqueeze(0).cuda() for d in data]
     seg_pred, vertex_pred, loss_seg, loss_vertex, precision, recall = net(image, mask, vertex, vertex_weights)
+
+    # visualize_mask(mask)
+    # visualize_vertex(vertex, vertex_weights)
+    # visualize_hypothesis(image, seg_pred, vertex_pred, corner_target)
+    # visualize_voting_ellipse(image, seg_pred, vertex_pred, corner_target)
 
     eval_net = DataParallel(EvalWrapper().cuda())
     corner_pred = eval_net(seg_pred, vertex_pred).cpu().detach().numpy()[0]

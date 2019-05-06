@@ -183,25 +183,26 @@ def visualize_voting_ellipse(rgb,mean,var,target,save=False, save_fn=None):
     :return:
     '''
     b,vn,_=mean.shape
+    yellow=np.array([1.0,0.0,0.0])
+    red=np.asarray([1.0,1.0,0.0])
+    num=5
     for bi in range(b):
-        _, ax = plt.subplots(1)
-
         for vi in range(vn):
+            _, ax = plt.subplots(1, figsize=(10, 8))
             cov=var[bi,vi]
             w,v=np.linalg.eig(cov)
-            w*=50
-            elp=patches.Ellipse(mean[bi,vi],w[0],w[1],np.arctan2(v[1,0],v[0,0])/np.pi*180,fill=False)
-            ax.add_patch(elp)
+            for k in range(num):
+                size=w*k*3
+                elp = patches.Ellipse(mean[bi, vi], size[0], size[1], np.arctan2(v[1, 0], v[0, 0]) / np.pi * 180, fill=False, color=yellow/num*(num-k)+red/num*k)
+                ax.add_patch(elp)
 
-        ax.plot(target[bi,:,0],target[bi,:,1],'*')
-        ax.scatter(mean[bi,:,0],mean[bi,:,1],c=np.arange(vn))
-        ax.imshow(rgb[bi])
-        if save:
-            plt.savefig(save_fn.format(bi))
-        else:
-            plt.show()
-        plt.close()
-
+            ax.scatter(mean[bi,vi,0],mean[bi,vi,1], marker='*', c=[yellow], s=8)
+            ax.imshow(rgb[bi])
+            if save:
+                plt.savefig(save_fn.format(bi))
+            else:
+                plt.show()
+            plt.close()
 
 
 

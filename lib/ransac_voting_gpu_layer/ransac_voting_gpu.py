@@ -980,6 +980,60 @@ def ransac_motion_voting(mask, vertex):
 
     return torch.cat(pts,0)
 
+def generate_hypothesis(mask, vertex, round_hyp_num, inlier_thresh=0.999, confidence=0.99, max_iter=20,
+                           min_num=5, max_num=30000):
+    '''
+    :param mask:      [b,h,w]
+    :param vertex:    [b,h,w,vn,2]
+    :param round_hyp_num:
+    :param inlier_thresh:
+    :return: [b,vn,2]
+    '''
+    b, h, w, vn, _ = vertex.shape
+    batch_hyp_pts = []
+    batch_hyp_counts = []
+    for bi in range(b):
+        hyp_num = 0
+        cur_mask = (mask[bi]).byte()
+        foreground_num = torch.sum(cur_mask)
+
+        # if too few points, just skip it
+        if foreground_num < min_num:
+            win_pts = torch.zeros([1, vn, 2], dtype=torch.float32, device=mask.device)
+            batch_win_pts.append(win_pts)  # [1,vn,2]
+            continue
+
+        # if too many inliers, we randomly down sample it
+        if foreground_num > max_num:
+            selection = torch.zeros(cur_mask.shape, dtype=torch.float32, device=mask.device).uniform_(0, 1)
+            selected_mask = (selection < (max_num / foreground_num.float()))
+            cur_mask *= selected_mask
+
+        coords = torch.nonzero(cur_mask).float()  # [tn,2]
+        coords = coords[:, [1, 0]]
+        direct = vertex[bi].masked_select(torch.unsqueeze(torch.unsqueeze(cur_mask, 2), 3))  # [tn,vn,2]
+        direct = direct.view([coords.shape[0], vn, 2])
+        tn = coords.shape[0]
+        idxs = torch.zeros([round_hyp_num, vn, 2], dtype=torch.int32, device=mask.device).random_(0, direct.shape[0])
+        all_win_ratio = torch.zeros([vn], dtype=torch.float32, device=mask.device)
+        all_win_pts = torch.zeros([vn, 2], dtype=torch.float32, device=mask.device)
+
+        # generate hypothesis
+        cur_hyp_pts = ransac_voting.generate_hypothesis(direct, coords, idxs)  # [hn,vn,2]
+
+        # voting for hypothesis
+        cur_inlier = torch.zeros([round_hyp_num, vn, tn], dtype=torch.uint8, device=mask.device)
+        ransac_voting.voting_for_hypothesis(direct, coords, cur_hyp_pts, cur_inlier, inlier_thresh)  # [hn,vn,tn]
+
+        # find max
+        cur_inlier_counts = torch.sum(cur_inlier, 2)                   # [hn,vn]
+
+        batch_hyp_pts.append(cur_hyp_pts)
+        batch_hyp_counts.append(cur_inlier_counts)
+
+    return torch.stack(batch_hyp_pts), torch.stack(batch_hyp_counts)
+
+
 
 if __name__=="__main__":
     from lib.datasets.linemod_dataset import LineModDatasetRealAug,VotingType
