@@ -58,7 +58,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to/pvnet/lib/utils/extend_utils/li
 
 Download the LINEMOD, which can be found at [here](https://1drv.ms/u/s!AtZjYZ01QjphgQ56t4wCharVSfxL).
 
-Download the LINEMOD_ORIG, which can be found at [here](http://campar.in.tum.de/Main/StefanHinterstoisser).
+Download the LINEMOD_ORIG, which can be found at [here](./tools/download_linemod_orig.sh).
 
 Download the OCCLUSION_LINEMOD, which can be found at [here](https://1drv.ms/u/s!AtZjYZ01QjphgRCzvy05fjKqR__e)
 
