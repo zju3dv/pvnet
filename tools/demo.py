@@ -104,7 +104,7 @@ def read_data():
 
 
 def visualize_mask(mask):
-    plt.imshow(mask[0])
+    plt.imshow(mask[0].cpu())
     plt.show()
 
 
@@ -112,8 +112,8 @@ def visualize_vertex(vertex, vertex_weights):
     vertex = vertex * vertex_weights
     for i in range(9):
         _, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 8))
-        ax1.imshow(vertex[0, 2*i])
-        ax2.imshow(vertex[0, 2*i+1])
+        ax1.imshow(vertex[0, 2*i].cpu())
+        ax2.imshow(vertex[0, 2*i+1].cpu())
         plt.show()
 
 
