@@ -15,7 +15,7 @@ Check [TRUNCATION_LINEMOD.md](TRUNCATION_LINEMOD.md) for information about the T
 
 ## Installation
 
-1. Set up python environment
+1. Set up python 3.6.7 environment
 
 ```
 pip install -r requirements.txt
