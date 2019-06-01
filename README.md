@@ -60,7 +60,7 @@ Download the LINEMOD, which can be found at [here](https://1drv.ms/u/s!AtZjYZ01Q
 
 Download the LINEMOD_ORIG, which can be found at [here](./tools/download_linemod_orig.sh).
 
-Download the OCCLUSION_LINEMOD, which can be found at [here](https://1drv.ms/u/s!AtZjYZ01QjphgRCzvy05fjKqR__e)
+Download the OCCLUSION_LINEMOD, which can be found at [here](https://1drv.ms/u/s!AtZjYZ01QjphgRCzvy05fjKqR__e).
 
 ### Create the soft link
 
