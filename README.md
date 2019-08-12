@@ -108,7 +108,7 @@ We add a jupyter notebook [visualization.ipynb](./visualization.ipynb) for the k
 Before training, remember to add the `lib` under `extend_utils` to the LD_LIDBRARY_PATH
 
 ```
-export LD_LIDBRARY_PATH=$LD_LIDBRARY_PATH:/path/to/bb8-voter/lib/utils/extend_utils/lib
+export LD_LIDBRARY_PATH=$LD_LIDBRARY_PATH:/path/to/pvnet/lib/utils/extend_utils/lib
 ```
 
 Training
