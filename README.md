@@ -48,7 +48,7 @@ sudo apt-get install libatlas-base-dev=3.10.2-9
 python build_extend_utils_cffi.py
 ```
 
-If you cannot install `libsuitesparse-dev=1:4.4.6-1`, please install `libsuitesparse` and run `build_ceres.sh`.
+If you cannot install `libsuitesparse-dev=1:4.4.6-1`, please install `libsuitesparse`, run `build_ceres.sh` and move `ceres/ceres-solver/build/lib/libceres.so*` to `lib/utils/extend_utils/lib`.
 
 Add the `lib` under `extend_utils` to the LD_LIBRARY_PATH
 
