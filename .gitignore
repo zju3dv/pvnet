@@ -27,3 +27,4 @@ lib/mesh_renderer/build
 !lib/mesh_renderer/build/*.so
 lib/utils/extend_utils/src/CMakeFiles
 lib/utils/extend_utils/src/CMakeCache.txt
+ceres/
