@@ -21,7 +21,7 @@ Check [TRUNCATION_LINEMOD.md](TRUNCATION_LINEMOD.md) for information about the T
 pip install -r requirements.txt
 ```
 
-We need compile several files, which works fine with pytorch v0.4.1/v1.0.1 and gcc 5.4.0.
+We need compile several files, which works fine with pytorch v0.4.1/v1.1 and gcc 5.4.0.
 
 For users with a RTX GPU, you must use CUDA10 and pytorch v1.0.1 built from CUDA10.
 
