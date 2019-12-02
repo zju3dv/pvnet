@@ -1,0 +1,28 @@
+name: pvnet
+channels:
+  - conda-forge
+  - pytorch
+  - fastai
+dependencies:
+  - python==3.6.7
+  - pytorch==1.1.0
+  - torchvision
+  - fastprogress
+  - fastai
+  - jupyter
+  - scipy==1.2.1
+  - matplotlib==3.0.2
+  - transforms3d==0.3.1
+  - setuptools==39.1.0
+  - cffi==1.11.5
+  - numpy==1.14.3
+  - cython==0.29.14
+  - tensorboardx
+  - pip
+  - pip:
+      - plyfile==0.6
+      - opencv_contrib_python==3.4.2.16
+      - lmdb==0.94
+      - glumpy==1.0.6
+      - scikit_image==0.13.1
+      - easydict==1.7
