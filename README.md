@@ -15,6 +15,12 @@ Check [TRUNCATION_LINEMOD.md](TRUNCATION_LINEMOD.md) for information about the T
 
 ## Installation
 
+One way is to set up the environment with docker: [How to install pvnet with docker](docker/how-to-docker.md).
+
+Thanks **Joe Dinius** for providing the docker implementation.
+
+Another way is to use the following commands.
+
 1. Set up python 3.6.7 environment
 
 ```
