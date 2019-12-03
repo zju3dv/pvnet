@@ -1,0 +1,14 @@
+{
+    "runtimes": {
+        "nvidia": {
+            "path": "nvidia-container-runtime",
+            "runtimeArgs": []
+        }
+    },
+    "default-runtime": "nvidia",
+    "bridge": "none",
+    "storage-driver": "devicemapper",
+    "storage-opts": [
+        "dm.basesize=20G"
+    ]
+}
