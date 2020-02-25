@@ -1,4 +1,7 @@
-**Good news! We release a clean version of PVNet: [clean-pvnet](https://github.com/zju3dv/clean-pvnet), including [how to train the PVNet on the custom dataset](https://github.com/zju3dv/clean-pvnet#training-on-the-custom-dataset).**
+**Good news! We release a clean version of PVNet: [clean-pvnet](https://github.com/zju3dv/clean-pvnet), including**
+
+1. [how to train the PVNet on the custom dataset](https://github.com/zju3dv/clean-pvnet#training-on-the-custom-dataset).
+2. The training and testing on the tless dataset, where we detect multiple instances in an image.
 
 # PVNet: Pixel-wise Voting Network for 6DoF Pose Estimation
 
