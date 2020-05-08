@@ -6,5 +6,5 @@ docker run -it --rm \
     --name pvnet-nvidia-c \
     --net host \
     --privileged \
-    --runtime=nvidia \
+    --gpus all \
     pvnet-nvidia
