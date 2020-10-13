@@ -165,7 +165,7 @@ If you find this code useful for your research, please use the following BibTeX 
 This work is affliated with ZJU-SenseTime Joint Lab of 3D Vision, and its intellectual property belongs to SenseTime Group Ltd.
 
 ```
-Copyright SenseTime. All Rights Reserved.
+Copyright (c) ZJU-SenseTime Joint Lab of 3D Vision. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
