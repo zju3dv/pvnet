@@ -263,6 +263,7 @@ def train_net():
     print('motion state {}'.format(motion_model))
 
     if args.test_model:
+        torch.manual_seed(0)
         begin_epoch=load_model(net.module.net, optimizer, model_dir, args.load_epoch)
 
         if args.normal:
