@@ -9,6 +9,6 @@ setuptools==39.1.0
 cffi==1.11.5
 torchvision==0.2.1
 easydict==1.7
-numpy==1.14.3
+numpy==1.22.0
 plyfile==0.6
 glumpy==1.0.6
