@@ -1,4 +1,4 @@
-scipy==1.2.1
+scipy==1.10.0
 opencv_contrib_python==3.4.2.16
 matplotlib==3.0.2
 transforms3d==0.3.1
